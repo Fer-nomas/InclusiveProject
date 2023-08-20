@@ -4,9 +4,7 @@ import { PiHandHeartDuotone } from "react-icons/pi";
 import { RxLetterCaseCapitalize } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { MesaggeContext } from "../context/MessageContext";
-import { ShowContext } from "../context/ShowContext";
 import { PiChatCircleBold } from "react-icons/pi";
-import { Outlet, Link } from "react-router-dom";
 
 const fastAccess = `text-center relative flex flex-col justify-center items-center py-2 px-8 h-32 w-[300px]  text-xl rounded-[30px] bg-[#FDE5EC] z-20 text-black font-normal `;
 
@@ -14,10 +12,6 @@ let Home = () => {
   const context = useContext(MesaggeContext);
   const [mesagge, setMesagge] = context;
   const navigate = useNavigate();
-
-  const context2 = useContext(ShowContext);
-
-  const [show, setShow] = context2;
 
   const handleSubmit = (e) => {
     e.preventDefault();

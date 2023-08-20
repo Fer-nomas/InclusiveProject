@@ -30,29 +30,54 @@ function Search() {
   }
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center flex-col">
+    <div className="flex justify-center  flex-col">
       {newData.map((e) => {
         if (
           mesagge
             .toLowerCase()
             .trim()
-            .includes(e.symbolName.toLowerCase().trim()) 
+            .includes(e.symbolName.toLowerCase().trim())
         ) {
           return (
-            <div key={e}>
-              <div className="text-6xl m-10 font-bold" key={e.id}>
+            <div className="h-screen overflow-y-hidden flex justify-evenly flex-col" key={e}>
+              <div className="flex flex-col items-center">
+                <div
+                  className="lg:text-6xl sm:text-5xl text-4xl m-2 mt-20 font-bold flex flex-col items-left"
+                  key={e.id}
+                >
+                  Esta es la <br /> forma de decir{" "}
+                  <b className=" text-blue-800 first-letter:uppercase">{e.symbolName}</b> en lenguaje
+                  de señas.
+                </div>
+              </div>
+
+              <div className="h-[360px] text-blue-950 flex justify-center">
+                <ReactPlayer
+                  key={e.id + 1}
+                  url={e.link}
+                  controls
+                  playing
+                  muted
+                />
+              </div>
+              {/* <div className="flex  justify-center items-center flex-col " key={e}>
+              <div className="text-5xl mx-4 mt-24 mb-10 font-bold flex flex-col items-start text-left" key={e.id}>
                 Esta es la <br /> forma de decir{" "}
-                <b className=" text-blue-800">{e.symbolName}</b> <br /> en
+                <b className=" text-blue-800 first-letter:uppercase">{e.symbolName}</b>  en
                 lenguaje de señas.
               </div>
+
+
               <div
                 className="h-[360px] text-blue-950 flex pla"
               >
                 <ReactPlayer key={e.id + 1} url={e.link} controls playing muted />
               </div>
+              
+            </div> */}
             </div>
           );
-        } 
+        }
       })}
     </div>
   );
