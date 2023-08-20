@@ -46,7 +46,7 @@ let Header = () => {
       </nav>
       <Outlet />
       <div
-        className={`rounded-r-2xl shadow-2xl  h-[350px] fixed w-[250px] left-0 top-10 pt-8 gap-6 items-start flex-col bg-[#FDE5EC] z-100  ${show}`}
+        className={`rounded-r-2xl shadow-2xl  h-[350px] fixed w-[250px] left-0 top-10 pt-8 gap-4 flex-col bg-[#FDE5EC] z-100  ${show}`}
       >
         <Link
           className="w-full text-center cursor-pointer z-110  p-2 font-normal text-xl"
