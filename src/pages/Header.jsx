@@ -64,15 +64,15 @@ let Header = () => {
             Abecedario
           </div>
         </Link>
-        <Link
+        {/* <Link
           onClick={changeShow}
           className="w-full text-center cursor-pointer z-110  p-2 font-normal text-xl"
           to={"/"}
         >
           <div className="border-b-2 border-black py-2  text-2xl">
-            Abecedario
+            si
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

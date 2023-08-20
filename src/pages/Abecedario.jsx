@@ -1,5 +1,8 @@
 import React from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { MesaggeContext } from "../context/MessageContext";
+
 import LetterA from "../assets/a.png";
 import LetterB from "../assets/b.png";
 import LetterC from "../assets/c.png";
@@ -31,47 +34,51 @@ import LetterZ from "../assets/z.png";
 
 
 function Abecedario() {
+  const context = useContext(MesaggeContext);
+  const [mesagge, setMesagge] = context;
 
   const letterStyle = "h-[100px] cursor-pointer"
 
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/");
+    navigate("/search");
+    setMesagge(e)
+    
+    console.log(e)
   };
 
   return (
     <div className="w-screen bg-[#4477CE] flex justify-center flex-col items-center">
-      <h1 className="animate-fade-down animate-once animate-duration-500 animate-ease-in text-5xl text-center mt-[100px]  border-4 p-4 rounded-2xl text-white border-[#FDE5EC]">Abecedario en señas</h1>
+      <h1 className="animate-fade-down animate-once animate-duration-500 animate-ease-in text-5xl text-center mt-[100px]  border-4 p-4 rounded-2xl text-[#FDE5EC] border-[#FDE5EC]">Abecedario en señas</h1>
       <div className="animate-fade-down animate-once animate-duration-500 animate-ease-in border-8 m-8 bg-white border-[#FDE5EC] rounded-2xl py-4 flex mt-10 lg:w-[500px] items-center justify-center flex-wrap gap-1">
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterA} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterB} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterC} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterD} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterE} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterF} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterG} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterH} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterI} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterJ} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterK} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterL} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterM} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterN} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterÑ} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterO} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterP} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterQ} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterR} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterS} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterT} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterU} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterV} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterW} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterX} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle} srcSet={LetterY} alt="" />
-        <img onClick={handleSubmit}  className={letterStyle}  srcSet={LetterZ} alt="" />
+        <img onClick={()=>handleSubmit("a")}  className={letterStyle}  srcSet={LetterA} alt="" />
+        <img onClick={()=>handleSubmit("b")}  className={letterStyle} srcSet={LetterB} alt="" />
+        <img onClick={()=>handleSubmit("c")}  className={letterStyle} srcSet={LetterC} alt="" />
+        <img onClick={()=>handleSubmit("d")}  className={letterStyle}  srcSet={LetterD} alt="" />
+        <img onClick={()=>handleSubmit("e")}  className={letterStyle} srcSet={LetterE} alt="" />
+        <img onClick={()=>handleSubmit("f")}  className={letterStyle} srcSet={LetterF} alt="" />
+        <img onClick={()=>handleSubmit("g")}  className={letterStyle}  srcSet={LetterG} alt="" />
+        <img onClick={()=>handleSubmit("h")}  className={letterStyle} srcSet={LetterH} alt="" />
+        <img onClick={()=>handleSubmit("i")}  className={letterStyle} srcSet={LetterI} alt="" />
+        <img onClick={()=>handleSubmit("j")}  className={letterStyle}  srcSet={LetterJ} alt="" />
+        <img onClick={()=>handleSubmit("k")}  className={letterStyle} srcSet={LetterK} alt="" />
+        <img onClick={()=>handleSubmit("l")}  className={letterStyle} srcSet={LetterL} alt="" />
+        <img onClick={()=>handleSubmit("m")}  className={letterStyle}  srcSet={LetterM} alt="" />
+        <img onClick={()=>handleSubmit("n")}  className={letterStyle} srcSet={LetterN} alt="" />
+        <img onClick={()=>handleSubmit("ñ")}  className={letterStyle} srcSet={LetterÑ} alt="" />
+        <img onClick={()=>handleSubmit("o")}  className={letterStyle}  srcSet={LetterO} alt="" />
+        <img onClick={()=>handleSubmit("p")}  className={letterStyle} srcSet={LetterP} alt="" />
+        <img onClick={()=>handleSubmit("q")}  className={letterStyle} srcSet={LetterQ} alt="" />
+        <img onClick={()=>handleSubmit("r")}  className={letterStyle}  srcSet={LetterR} alt="" />
+        <img onClick={()=>handleSubmit("s")}  className={letterStyle} srcSet={LetterS} alt="" />
+        <img onClick={()=>handleSubmit("t")}  className={letterStyle} srcSet={LetterT} alt="" />
+        <img onClick={()=>handleSubmit("u")}  className={letterStyle} srcSet={LetterU} alt="" />
+        <img onClick={()=>handleSubmit("v")}  className={letterStyle} srcSet={LetterV} alt="" />
+        <img onClick={()=>handleSubmit("w")}  className={letterStyle}  srcSet={LetterW} alt="" />
+        <img onClick={()=>handleSubmit("x")}  className={letterStyle} srcSet={LetterX} alt="" />
+        <img onClick={()=>handleSubmit("y")}  className={letterStyle} srcSet={LetterY} alt="" />
+        <img onClick={()=>handleSubmit("z")}  className={letterStyle}  srcSet={LetterZ} alt="" />
         
       </div>
     </div>
