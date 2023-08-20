@@ -8,14 +8,10 @@ import ReactPlayer from "react-player/youtube";
 
 function Search() {
   const context = useContext(MesaggeContext);
-
   const [mesagge, setMesagge] = context;
-
   const navigate = useNavigate();
 
   const [newData, setNewData] = useState([]);
-
-  const [found, setFound] = useState(true);
 
   useEffect(() => {
     if (!mesagge) {
@@ -32,12 +28,7 @@ function Search() {
   return (
     <div className="flex justify-center  flex-col">
       {newData.map((e) => {
-        if (
-          mesagge
-            .toLowerCase()
-            .trim()
-            .includes(e.symbolName.toLowerCase().trim())
-        ) {
+        if (mesagge.toLowerCase().trim() == e.symbolName.toLowerCase().trim()) {
           return (
             <div
               className="h-screen bg-white overflow-y-hidden flex justify-evenly flex-col"

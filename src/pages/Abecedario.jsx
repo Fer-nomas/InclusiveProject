@@ -45,7 +45,6 @@ function Abecedario() {
     navigate("/search");
     setMesagge(e)
     
-    console.log(e)
   };
 
   return (

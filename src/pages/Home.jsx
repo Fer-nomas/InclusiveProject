@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext} from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { PiHandHeartDuotone } from "react-icons/pi";
 import { RxLetterCaseCapitalize } from "react-icons/rx";
