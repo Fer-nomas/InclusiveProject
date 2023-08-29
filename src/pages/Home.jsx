@@ -67,7 +67,7 @@ let Home = () => {
           Aprende el abecedario en señas
         </div>
       </div>
-      <div className=" bg-gray-200 flex flex-col items-center pt-36 w-screen h-screen mt-10 font-extrabold  rounded-t-[50px]">
+      <div className=" bg-gray-200 flex flex-col items-center pt-36 w-screen  mt-10 font-extrabold  rounded-t-[50px]">
         <div className="text-4xl sm:text-4xl lg:text-7xl flex-col flex  gap-4 text-center animate-fade-left animate-once animate-duration-700 animate-in-out animate-fill-both">
           <div className="text-center">
             Consulte todo lo que quiera sobre el
@@ -84,7 +84,13 @@ let Home = () => {
             </span>
           </div>
         </div>
+        <ul className="flex flex-wrap justify-center w-full px-10 py-2 ">
+          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
+          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
+          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
+        </ul>
       </div>
+
     </div>
   );
 };
