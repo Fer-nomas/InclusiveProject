@@ -1,4 +1,4 @@
-import { useEffect, useContext} from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MesaggeContext } from "../context/MessageContext";
 
@@ -6,9 +6,12 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { PiHandHeartDuotone } from "react-icons/pi";
 import { RxLetterCaseCapitalize } from "react-icons/rx";
 import { PiChatCircleBold } from "react-icons/pi";
+import hands from "../../public/hands.png";
+import Card from "./Card";
 
 const fastAccess = `text-center relative flex flex-col justify-center items-center py-2 px-8 h-32 w-[300px]  text-xl rounded-[30px] bg-[#FDE5EC] z-20 text-black font-normal `;
-const fastAccessText ="  bg-[#F8DE22] flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]"
+const fastAccessText =
+  "  bg-[#F8DE22] flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]";
 
 let Home = () => {
   const context = useContext(MesaggeContext);
@@ -41,7 +44,7 @@ let Home = () => {
           <input
             placeholder="Ingresa una palabra"
             onChange={(e) => {
-              setMesagge(e.target.value);   
+              setMesagge(e.target.value);
             }}
             className="text-xl bg-transparent w-screen ml-2 rounded-xl outline-none p-3 "
             type="text"
@@ -64,7 +67,7 @@ let Home = () => {
           Busca palabras en segundos
         </div>
         <div className={fastAccess}>
-          <div className= {fastAccessText}>
+          <div className={fastAccessText}>
             <RxLetterCaseCapitalize />
           </div>
           Aprende el abecedario en señas
@@ -87,13 +90,22 @@ let Home = () => {
             </span>
           </div>
         </div>
-        <ul className="flex flex-wrap justify-center w-full px-10 py-2 ">
-          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
-          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
-          <li className="p-2 w-full lg:w-1/3 h-[600px]"><div className="bg-red-800 w-full h-full"></div></li>
+        <ul className="flex flex-wrap justify-center w-full px-10 py-10 ">
+          <Card
+            info={
+              "Practica regularmente el alfabeto y los números para fortalecer tu base antes de avanzar a vocabulario y frases más complejas."
+            }
+            img={"https://aprendelenguadesignos.com/wp-content/uploads/2010/12/numeros-en-lengua-de-signos.jpg"}
+          />
+          <Card info={
+              "Aprende el alfabeto manual y los números. Esto te permitirá deletrear palabras y expresar cantidades, lo que es fundamental para la comunicación en lenguaje de señas."
+            }
+            img={"https://i.pinimg.com/originals/8c/47/63/8c4763a630ebc93b6b801bf6734d7035.jpg"}
+            
+          />
+          <Card info={"La práctica constante te ayudará a retener lo que has aprendido y a mejorar tu fluidez."} img ={hands} />
         </ul>
       </div>
-
     </div>
   );
 };

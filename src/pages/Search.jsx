@@ -12,7 +12,8 @@ function Search() {
   const navigate = useNavigate();
 
   const [newData, setNewData] = useState([]);
-
+  const [find, setFind] = useState(true);
+  let i = 1;
   useEffect(() => {
     if (!mesagge) {
       navigate("/");
@@ -26,13 +27,13 @@ function Search() {
   }
 
   return (
-    <div className="flex justify-center  flex-col">
+    <div className="flex justify-center w-screen flex-col">
       {newData.map((e) => {
         if (mesagge.toLowerCase().trim() == e.symbolName.toLowerCase().trim()) {
           return (
             <div
               className="h-screen bg-white overflow-y-hidden flex justify-evenly flex-col"
-              key={e}
+              key={e.id + 1}
             >
               <div className="flex flex-col items-center">
                 <div
@@ -58,7 +59,11 @@ function Search() {
               </div>
             </div>
           );
+        } else if (newData.length == i) {
+          navigate("/404");
         }
+
+        i++;
       })}
     </div>
   );
