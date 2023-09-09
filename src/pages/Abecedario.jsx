@@ -44,7 +44,6 @@ function Abecedario() {
   const handleSubmit = (e) => {
     navigate("/search");
     setMesagge(e)
-    
   };
 
   return (
@@ -55,7 +54,7 @@ function Abecedario() {
         <img onClick={()=>handleSubmit("b")}  className={letterStyle} srcSet={LetterB} alt="" />
         <img onClick={()=>handleSubmit("c")}  className={letterStyle} srcSet={LetterC} alt="" />
         <img onClick={()=>handleSubmit("d")}  className={letterStyle}  srcSet={LetterD} alt="" />
-        <img onClick={()=>handleSubmit("e")}  className={letterStyle} srcSet={LetterE} alt="" />
+        <img onClick={()=>handleSubmit("e")}  className={letterStyle} srcSet={LetterE} alt="" />1.
         <img onClick={()=>handleSubmit("f")}  className={letterStyle} srcSet={LetterF} alt="" />
         <img onClick={()=>handleSubmit("g")}  className={letterStyle}  srcSet={LetterG} alt="" />
         <img onClick={()=>handleSubmit("h")}  className={letterStyle} srcSet={LetterH} alt="" />

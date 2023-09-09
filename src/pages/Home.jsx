@@ -1,19 +1,21 @@
 import { useEffect, useContext} from "react";
+import { useNavigate } from "react-router-dom";
+import { MesaggeContext } from "../context/MessageContext";
+
 import { AiOutlineSearch } from "react-icons/ai";
 import { PiHandHeartDuotone } from "react-icons/pi";
 import { RxLetterCaseCapitalize } from "react-icons/rx";
-import { useNavigate } from "react-router-dom";
-import { MesaggeContext } from "../context/MessageContext";
 import { PiChatCircleBold } from "react-icons/pi";
 
 const fastAccess = `text-center relative flex flex-col justify-center items-center py-2 px-8 h-32 w-[300px]  text-xl rounded-[30px] bg-[#FDE5EC] z-20 text-black font-normal `;
+const fastAccessText ="  bg-[#F8DE22] flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]"
 
 let Home = () => {
   const context = useContext(MesaggeContext);
   const [mesagge, setMesagge] = context;
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const alDarClick = (e) => {
     e.preventDefault();
     navigate("/search");
   };
@@ -33,35 +35,36 @@ let Home = () => {
       />
       <form
         className="animate-fade-down animate-once animate-duration-500 animate-ease-in h-18 flex flex-col justify-center items-center w-full md:w-1/2 lg:w-1/2"
-        onSubmit={handleSubmit}
+        onSubmit={alDarClick}
       >
         <div className=" flex w-full h-[50px] bg-white justify-between items-center rounded-full">
           <input
-            placeholder="Busca alguna frase"
+            placeholder="Ingresa una palabra"
             onChange={(e) => {
-              setMesagge(e.target.value);
+              setMesagge(e.target.value);   
             }}
-            className=" text-xl bg-transparent w-screen ml-2 rounded-xl outline-none p-3 "
+            className="text-xl bg-transparent w-screen ml-2 rounded-xl outline-none p-3 "
             type="text"
           />
           <AiOutlineSearch className={`mr-6 text-5xl text-[#1477CE] `} />
         </div>
       </form>
+
       <div className="animate-fade-down animate-once animate-duration-500 animate-ease-in flex flex-wrap justify-center gap-4 w-screen mt-16 mb-12 ">
         <div className={fastAccess}>
-          <div className="   bg-[#F8DE22] flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]">
+          <div className={fastAccessText}>
             <PiHandHeartDuotone />
           </div>
           Aprende a hablar con señas
         </div>
         <div className={fastAccess}>
-          <div className="  bg-[#F8DE22]  flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]">
+          <div className={fastAccessText}>
             <PiChatCircleBold />
           </div>
           Busca palabras en segundos
         </div>
         <div className={fastAccess}>
-          <div className="  bg-[#F8DE22] flex text-3xl rounded-full p-[10px] absolute top-[-20px] text-[#F3AA60]">
+          <div className= {fastAccessText}>
             <RxLetterCaseCapitalize />
           </div>
           Aprende el abecedario en señas
