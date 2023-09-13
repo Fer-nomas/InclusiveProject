@@ -18,7 +18,7 @@ let Home = () => {
   const [mesagge, setMesagge] = context;
   const navigate = useNavigate();
 
-  const alDarClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/search");
   };
@@ -38,7 +38,7 @@ let Home = () => {
       />
       <form
         className="animate-fade-down animate-once animate-duration-500 animate-ease-in h-18 flex flex-col justify-center items-center w-full md:w-1/2 lg:w-1/2"
-        onSubmit={alDarClick}
+        onSubmit={handleSubmit}
       >
         <div className=" flex w-full h-[50px] bg-white justify-between items-center rounded-full">
           <input
@@ -49,7 +49,7 @@ let Home = () => {
             className="text-xl bg-transparent w-screen ml-2 rounded-xl outline-none p-3 "
             type="text"
           />
-          <AiOutlineSearch className={`mr-6 text-5xl text-[#1477CE] `} />
+          <AiOutlineSearch onClick={handleSubmit} className={`mr-6 text-5xl text-[#1477CE] `} />
         </div>
       </form>
 
