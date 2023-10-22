@@ -46,6 +46,7 @@ let Home = () => {
             onChange={(e) => {
               setMesagge(e.target.value);
             }}
+            
             className="text-xl bg-transparent w-screen ml-2 rounded-xl outline-none p-3 "
             type="text"
           />

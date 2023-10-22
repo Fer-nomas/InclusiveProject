@@ -32,7 +32,7 @@ function Search() {
         if (mesagge.toLowerCase().trim() == e.symbolName.toLowerCase().trim()) {
           return (
             <div
-              className="h-screen bg-white overflow-y-hidden flex justify-evenly flex-col"
+              className=" bg-white overflow-y-hidden flex justify-evenly flex-col"
               key={e.id + 1}
             >
               <div className="flex flex-col items-center">

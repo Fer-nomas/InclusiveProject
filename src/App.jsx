@@ -8,6 +8,8 @@ import Search from "./pages/Search";
 import MesaggeProvider from "./context/MessageContext";
 import ShowProvider from "./context/ShowContext";
 import NotFound from "./pages/NotFound";
+import Numeros from "./pages/Numeros";
+import Meses from "./pages/Meses";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="abecedario" element={<Abecedario />} />
             <Route path="search" element={<Search />} />
+            <Route path="numeros" element={<Numeros />} />
+            <Route path="meses" element={<Meses />} />
             <Route path="404" element={<NotFound />} />
           </Route>
         </Routes>

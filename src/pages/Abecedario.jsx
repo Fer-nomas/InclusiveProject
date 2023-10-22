@@ -45,8 +45,8 @@ function Abecedario() {
   };
 
   return (
-    <div className="w-screen bg-[#4477CE] flex justify-center flex-col items-center">
-      <h1 className="animate-fade-down animate-once animate-duration-500 animate-ease-in text-[40px]  m-8 bg-white text-center mt-[100px]  border-8 p-4 rounded-2xl text-[#000] border-[#FDE5EC]">
+    <div className="w-screen bg-[#4477CE] flex  flex-col items-center">
+      <h1 className="animate-fade-down  bg-[#FDE5EC] animate-once animate-duration-500 animate-ease-in text-[40px] w-screen mb-8 text-center mt-[60px]  p-4 text-[#000] ">
         Abecedario en señas
       </h1>
       <div className="animate-fade-down animate-once animate-duration-500 animate-ease-in border-8 m-8 bg-white border-[#FDE5EC] rounded-2xl py-4 flex mt-10 lg:w-[500px] items-center justify-center flex-wrap gap-1">
